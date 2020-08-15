@@ -1,12 +1,9 @@
-import { Column, Entity, ObjectIdColumn, PrimaryColumn } from 'typeorm/index';
+import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm/index';
 
 @Entity()
 export class Lesson {
   @ObjectIdColumn()
-  _id: string
-
-  @PrimaryColumn()
-  id: string
+  id: ObjectID;
 
   @Column()
   name: string;
