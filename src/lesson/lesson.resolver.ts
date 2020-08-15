@@ -10,14 +10,9 @@ export class LessonResolver {
   constructor(private lessonService: LessonService) {
   }
 
-  @Query(returns => LessonType)
-  lesson() {
-    return {
-      id: 'jjjjasdasdasdgg',
-      name: 'nestjs graphql',
-      startDate: (new Date()).toISOString(),
-      endDate: (new Date()).toISOString(),
-    };
+  @Query(returns => [LessonType])
+  getLessons() {
+    return this.lessonService.getLessons();
   }
 
   @Query(returns => LessonType)
