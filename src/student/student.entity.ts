@@ -1,20 +1,14 @@
 import { Column, Entity, ObjectID, ObjectIdColumn } from 'typeorm/index';
 
 @Entity()
-export class Lesson {
+export class Student {
 
   @ObjectIdColumn()
   id: ObjectID;
 
   @Column()
-  name: string;
+  firstName: string;
 
   @Column()
-  startDate: string;
-
-  @Column()
-  endDate: string;
-
-  @Column()
-  students: string[]
+  lastName: string;
 }

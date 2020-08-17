@@ -4,6 +4,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { LessonModule } from './lesson/lesson.module';
 import { Lesson } from './lesson/lesson.entity';
+import { StudentModule } from './student/student.module';
+import { Student } from './student/student.entity';
 
 @Module({
   imports: [
@@ -13,11 +15,13 @@ import { Lesson } from './lesson/lesson.entity';
       synchronize: true,
       useUnifiedTopology: true,
       entities: [
-        Lesson
+        Lesson,
+        Student
       ]
     }),
     GraphQLModule.forRoot({ autoSchemaFile: true }),
     LessonModule,
+    StudentModule,
   ],
 })
 export class AppModule {
